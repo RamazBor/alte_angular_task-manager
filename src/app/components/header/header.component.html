@@ -1,0 +1,15 @@
+<header>
+  <div class="logo">
+    <h1>Task Manager</h1>
+  </div>
+  <div class="menu">
+    <nav>
+      <ul>
+        <li *ngIf="signUp"><a routerLink="/sign-up" routerLinkActive="active-link">{{ signUp }}</a></li>
+        <li *ngIf="signIn"><a routerLink="/sign-in" routerLinkActive="active-link"> {{ signIn }} </a></li>
+        <li *ngIf="tasks"><a routerLink="/tasks" routerLinkActive="active-link"> {{ tasks }} </a></li>
+        <li *ngIf="projects"><a routerLink="/projects" routerLinkActive="active-link"> {{ projects }} </a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
