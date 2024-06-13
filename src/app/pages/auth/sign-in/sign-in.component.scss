@@ -22,8 +22,6 @@
     }
     .input-field {
       width: 220px;
-      label {
-      }
       input {
         width: 240px;
         height: 38px;
@@ -31,6 +29,9 @@
         font-size: 16px;
         border-radius: 5px;
         border: 1px solid #e8e8e8;
+      }
+      input.ng-invalid.ng-touched {
+        border: 1px solid #ff0909;
       }
     }
     .action {
@@ -60,10 +61,6 @@
       .btn:focus {
         box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 2px;
       }
-    }
-  }
-  .sign-up {
-    p {
     }
   }
 }
