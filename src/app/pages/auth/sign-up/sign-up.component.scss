@@ -5,10 +5,9 @@
   margin: 20px 0px;
   width: 100%;
   form {
-    width: 400px;
+    width: 800px;
     height: auto;
     display: flex;
-    flex-direction: column;
     padding: 20px;
     border: 1px solid #e8e8e8;
     display: flex;
@@ -18,10 +17,18 @@
       font-size: 30px;
       letter-spacing: 0.5px;
     }
-    mat-form-field {
+    .content {
       width: 90%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      mat-form-field {
+        width: 300px;
+        margin: 10px;
+      }
     }
     button {
+      padding: 10px 50px;
       background-color: #1434A4;
     }
   }
