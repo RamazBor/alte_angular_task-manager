@@ -11,6 +11,7 @@
             formControlName="firstName"
             matInput
             placeholder="FirstName"
+            autocomplete
           />
           @if (form.get('firstName')?.hasError('required')) {
           <mat-error>FirstName is <strong>required</strong></mat-error>
@@ -23,6 +24,7 @@
             formControlName="lastName"
             matInput
             placeholder="LastName"
+            autocomplete
           />
           @if (form.get('lastName')?.hasError('required')) {
           <mat-error>LastName is <strong>required</strong></mat-error>
@@ -37,6 +39,7 @@
             matInput
             formControlName="email"
             placeholder="Ex. pat@example.com"
+            autocomplete
           />
           @if (form.get('email')?.hasError('email') &&
           !form.get('email')?.hasError('required')) {
@@ -52,6 +55,7 @@
             formControlName="password"
             matInput
             placeholder="Password"
+            autocomplete
           />
           @if (form.get('password')?.hasError('required')) {
           <mat-error>Password is <strong>required</strong></mat-error>

@@ -41,7 +41,13 @@ export class SignUpComponent {
     ]),
   });
 
+
+
   signUp() {
-    this.form.markAllAsTouched();
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
     }
 }
