@@ -1,6 +1,6 @@
 <alte-header [signUp]="'Sign Up'" [signIn]="'Sign In'" />
 <div class="login-form">
-  <form [formGroup]="myForm">
+  <form [formGroup]="form">
     <div class="content">
       <h1>Login</h1>
       <div class="input-field">
@@ -12,10 +12,10 @@
           formControlName="email"
           autocomplete
         />
-        @if(myForm.get('email')?.hasError('required') &&
-        myForm.get('email')?.touched) {
+        @if(form.get('email')?.hasError('required') &&
+        form.get('email')?.touched) {
         <small class="error">Email is required!</small>
-        } @if(myForm.get('email')?.hasError('email')) {
+        } @if(form.get('email')?.hasError('email')) {
         <small class="error">Invalid email!</small>
         }
       </div>
@@ -28,17 +28,17 @@
           formControlName="password"
           autocomplete
         />
-        @if(myForm.get('password')?.hasError('required') &&
-        myForm.get('password')?.touched) {
+        @if(form.get('password')?.hasError('required') &&
+        form.get('password')?.touched) {
         <small class="error">Password is required!</small>
-        } @if(myForm.get('password')?.hasError('minlength')) {
+        } @if(form.get('password')?.hasError('minlength')) {
         <small class="error"
           >Password must be at least 6 characters long!</small
         >
         }
       </div>
       <div class="action">
-        <button class="btn" (click)="signIn()">Login</button>
+        <button class="btn" (click)="login()">Login</button>
       </div>
       <div class="sign-up">
         <p>Don't have an account? <a routerLink="/sign-up">Sign Up</a></p>
