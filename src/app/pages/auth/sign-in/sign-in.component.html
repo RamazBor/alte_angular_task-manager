@@ -1,6 +1,6 @@
 <alte-header [signUp]="'Sign Up'" [signIn]="'Sign In'" />
 <div class="login-form">
-  <form [formGroup]="form">
+  <form [formGroup]="myForm">
     <div class="content">
       <h1>Login</h1>
       <div class="input-field">
@@ -12,10 +12,10 @@
           formControlName="email"
           autocomplete
         />
-        @if(form.get('email')?.hasError('required') &&
-        form.get('email')?.touched) {
+        @if(myForm.get('email')?.hasError('required') &&
+        myForm.get('email')?.touched) {
         <small class="error">Email is required!</small>
-        } @if(form.get('email')?.hasError('email')) {
+        } @if(myForm.get('email')?.hasError('email')) {
         <small class="error">Invalid email!</small>
         }
       </div>
@@ -28,10 +28,10 @@
           formControlName="password"
           autocomplete
         />
-        @if(form.get('password')?.hasError('required') &&
-        form.get('password')?.touched) {
+        @if(myForm.get('password')?.hasError('required') &&
+        myForm.get('password')?.touched) {
         <small class="error">Password is required!</small>
-        } @if(form.get('password')?.hasError('minlength')) {
+        } @if(myForm.get('password')?.hasError('minlength')) {
         <small class="error"
           >Password must be at least 6 characters long!</small
         >
