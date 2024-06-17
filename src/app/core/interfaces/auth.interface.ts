@@ -1,3 +1,4 @@
+import { User } from "./user.interface";
 
 export interface Login {
   email: string;
