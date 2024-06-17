@@ -2,6 +2,8 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { StorageService } from '../core/services/storage.service';
 import { Observable, tap } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { AuthResponse, Login } from '../core/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -38,3 +40,4 @@ export class AuthFacade {
     );
   }
 }
+
