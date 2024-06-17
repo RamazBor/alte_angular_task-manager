@@ -16,6 +16,9 @@
           @if (form.get('firstName')?.hasError('required')) {
           <mat-error>FirstName is <strong>required</strong></mat-error>
           }
+          @if (form.get('firstName')?.hasError('minlength')) {
+            <mat-error>FirstName must be at least <strong>4 characters</strong></mat-error>
+            }
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>LastName</mat-label>
@@ -29,6 +32,9 @@
           @if (form.get('lastName')?.hasError('required')) {
           <mat-error>LastName is <strong>required</strong></mat-error>
           }
+          @if (form.get('lastName')?.hasError('minlength')) {
+            <mat-error>LastName must be at least <strong>5 characters</strong></mat-error>
+            }
         </mat-form-field>
       </div>
       <div class="column">

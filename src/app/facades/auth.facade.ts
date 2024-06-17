@@ -3,7 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { StorageService } from '../core/services/storage.service';
 import { Observable, tap } from 'rxjs';
-import { AuthResponse, Login } from '../core/interfaces';
+import { AuthResponse, Login, Register } from '../core/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +37,16 @@ export class AuthFacade {
         this.storageService.setItem('user', user);
       })
     );
+  }
+
+  register(payload: Register): Observable<AuthResponse> {
+    return this.authservice.register(payload).pipe(
+      tap((res: AuthResponse) => {
+        console.log(res);
+        const user = res.user;
+        this.storageService.setItem('token', res.token);
+        this.storageService.setItem('user', user);
+      })
+    )
   }
 }
