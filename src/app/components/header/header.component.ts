@@ -1,6 +1,7 @@
 import { NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthFacade } from '../../facades';
 
 @Component({
   selector: 'alte-header',
@@ -14,4 +15,15 @@ export class HeaderComponent {
   @Input() signIn!: string;
   @Input() tasks!: string;
   @Input() projects!: string;
+  @Input() signOut!: string;
+
+  authFacade: AuthFacade = inject(AuthFacade);
+
+  get isAuthenticated() {
+    return this.authFacade.isAuthenticated;
+  }
+
+  logout(): void {
+    this.authFacade.logout();
+  }
 }

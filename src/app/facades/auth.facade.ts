@@ -14,6 +14,11 @@ export class AuthFacade {
   storageService = inject(StorageService);
   router = inject(Router);
 
+  get isAuthenticated() {
+    // Two '!' sign means return value is string
+    return !!this.storageService.getItem('accessToken');
+  }
+
   get accessToken(): string {
     return this.storageService.getItem('accessToken');
   }
@@ -48,5 +53,10 @@ export class AuthFacade {
         this.storageService.setItem('user', user);
       })
     )
+  }
+
+  logout(): void {
+    this.storageService.clear();
+    this.router.navigate(['/']);
   }
 }
