@@ -1,0 +1,51 @@
+<alte-header [signUp]="'Sign up'" [signIn]="'Sign in'" />
+<div class="login-form">
+  <div class="gif">
+    <img src="assets/images/task-manager.gif" alt="task-manager-gif">
+  </div>
+  <form [formGroup]="myForm">
+    <div class="content">
+      <h1>Login</h1>
+      <div class="input-field">
+        <label for="email">Email</label><br />
+        <input
+          type="text"
+          id="email"
+          placeholder="Email"
+          formControlName="email"
+          autocomplete
+        />
+        @if(myForm.get('email')?.hasError('required') &&
+        myForm.get('email')?.touched) {
+        <small class="error">Email is required!</small>
+        } @if(myForm.get('email')?.hasError('email')) {
+        <small class="error">Invalid email!</small>
+        }
+      </div>
+      <div class="input-field">
+        <label for="password">Password</label><br />
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          formControlName="password"
+          autocomplete
+        />
+        @if(myForm.get('password')?.hasError('required') &&
+        myForm.get('password')?.touched) {
+        <small class="error">Password is required!</small>
+        } @if(myForm.get('password')?.hasError('minlength')) {
+        <small class="error"
+          >Password must be at least 6 characters long!</small
+        >
+        }
+      </div>
+      <div class="action">
+        <button class="btn" (click)="login()">Login</button>
+      </div>
+      <div class="sign-up">
+        <p>Don't have an account? <a routerLink="/sign-up">Sign Up</a></p>
+      </div>
+    </div>
+  </form>
+</div>

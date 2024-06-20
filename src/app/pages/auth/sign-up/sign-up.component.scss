@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+  padding: 50px 20px;
+  background-color: #f2f2f2;
+  form {
+    width: 800px;
+    height: auto;
+    display: flex;
+    padding: 20px;
+    border: 1px solid #e8e8e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    h1 {
+      font-size: 30px;
+      letter-spacing: 0.5px;
+    }
+    .content {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      mat-form-field {
+        width: 300px;
+        margin: 10px;
+      }
+    }
+    button {
+      padding: 10px 50px;
+      background-color: #1434A4;
+    }
+  }
+}
