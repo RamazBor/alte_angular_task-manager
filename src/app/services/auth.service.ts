@@ -1,18 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiService } from '../core/services';
-import { AuthResponse, Login, Register } from '../core/interfaces/auth.interface';
+import {
+  AuthResponse,
+  Login,
+  Register,
+} from '../core/interfaces/auth.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService extends ApiService {
-
   login(payload: Login): Observable<AuthResponse> {
     return this.post<AuthResponse>('auth/login', payload);
   }
 
   register(payload: Register): Observable<AuthResponse> {
     return this.post<AuthResponse>('auth/signup', payload);
+  }
+
+  token(refreshToken: string): Observable<{
+    token: { accessToken: string; refreshToken: string };
+    user: any;
+  }> {
+    return this.post<any>('auth/token', { refreshToken });
   }
 }
